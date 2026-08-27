@@ -1,0 +1,14 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "WSL-default",
+      "displayName": "WSL BUILD",
+      "description": "Default Build",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/Submodules/vcpkg/scripts/buildsystems/vcpkg.cmake"
+      }
+    }
+  ]
+}
