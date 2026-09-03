@@ -2,11 +2,12 @@
 cmake_minimum_required(VERSION 3.25)
 
 # 2. Define the project name and programming language
-project(templateRepo LANGUAGES CXX)
+project(simpleZmq LANGUAGES CXX)
 
 find_package(cppzmq CONFIG REQUIRED)
 
 set(CMAKE_CXX_STANDARD 20)
+
 # 3. Create client
 add_executable(test_client source/client_test/clientMain.cpp)
 

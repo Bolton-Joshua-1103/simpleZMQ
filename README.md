@@ -1,6 +1,9 @@
-THIS IS A TEMPLATE REPO
+"Simple" ZMQ
 ========  
-This template repo uses cmake, vcpkg, build script, runscripts and should all be self contained to compile right from a debian/ubuntu based clone. It has the most basic example of the zeromq client/server from the official guide. It is meant to be used as a starting point for projects that use Cmake and/or vcpkg and/or zeromq.  
+This is intended to be a library implementing the common ZMQ patterns found in the tutorial. Creating
+'simple' classes that can be included in other projects to get some of the pattern headache out of the way.  
+
+Currently this project is intended to be entirely academic.
 ----  
 
 To build:  
