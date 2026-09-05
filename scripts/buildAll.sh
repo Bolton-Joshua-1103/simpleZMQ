@@ -7,29 +7,17 @@ REPO_DIR="$SCRIPT_DIR/.." #scripts directory is assumed to be always at <REPO_RO
 BUILD_DIR="$REPO_DIR/build/$DEFAULT_PRESET"
 SUBMODULE_DIR="$REPO_DIR/Submodules"
 
-#VCPKG REQUIRED PACKAGES
-sudo apt-get update
-sudo apt-get install -y \
-    build-essential \
-    curl \
-    zip \
-    unzip \
-    tar \
-    pkg-config \
-    git \
-    ninja-build \
-    cmake
+echo "====== BEGIN buildAll.sh ======"
 
-#Configure VCPKG
-git submodule sync
-git submodule update --init --recursive
-$SUBMODULE_DIR/vcpkg/bootstrap-vcpkg.sh
+#Install Dependencies, Configure Submodules, Configure VCPKG, universal step for all targets
+$SCRIPT_DIR/configureBuild.sh
+
+#Prepare build direcdtory
+mkdir -p $BUILD_DIR
+echo "==== BUILD DIR: $BUILD_DIR ===="
+cd $BUILD_DIR
 
 #CMake build
-echo "==== VCPKG SETUP COMPLETE ===="
-mkdir -p $BUILD_DIR
-echo "==== BUILD DIR: $BUILD_DIR"
-cd $BUILD_DIR
 echo "==== BEGIN CMAKE BUILD ===="
 cmake ../.. --preset $DEFAULT_PRESET
 cmake --build .
