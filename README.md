@@ -13,4 +13,7 @@ Exectuables are test_server and test_client and should be found in <REPO_ROOT>/b
 
 To run:  
 Start server and client simultaneously with <REPO_ROOT>/scripts/startAll.sh
-Kill with CTRL+C - server hangs on receive wait (WIP) 
+Kill with CTRL+C - server hangs on receive wait (WIP)  
+
+LIBZMQ API REFERENCE:
+https://libzmq.readthedocs.io/en/latest/
