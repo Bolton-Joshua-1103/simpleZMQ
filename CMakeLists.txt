@@ -22,3 +22,11 @@ add_executable(test_server source/server_test/serverMain.cpp)
 target_link_libraries(test_server
     PRIVATE
         cppzmq)
+
+# 5. Create MDP test app 
+
+add_executable(test_mdp source/MDP/mainPOC.cpp)
+
+target_link_libraries(test_mdp
+    PRIVATE
+        cppzmq)
