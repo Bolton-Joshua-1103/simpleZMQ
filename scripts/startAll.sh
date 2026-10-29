@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-BUILD_DIR="$SCRIPT_DIR/../build"
+BUILD_DIR="$SCRIPT_DIR/../build/WSL-default"
 SERVER="$BUILD_DIR/test_server"
 CLIENT="$BUILD_DIR/test_client"
 
