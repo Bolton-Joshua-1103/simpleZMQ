@@ -11,10 +11,11 @@ class simpleBroker {
         }
         bool Init() {
             if (active) return false;
+            std::cout << "Initializing Simple Broker" << std::endl;
             try {
-                socketPtr.reset(std::make_unique<zmq::socket_t>(&socketContext, zmq::socket_type::router).get());
-                socketPtr->bind(addr);
-                active = true;
+               // socketPtr.reset(std::make_unique<zmq::socket_t>(&socketContext, zmq::socket_type::router).get());
+               // socketPtr->bind(addr);
+               // active = true;
             }
             catch(zmq::error_t& zmqExc) {
                 std::cout << "Exception thrown when initializing simpleBroker: " << zmqExc.what() << std::endl;
@@ -30,11 +31,11 @@ class simpleBroker {
     private:
 
         bool write(std::string payload) {
-            static zmq::send_flags flags{};
-            zmq::message_t thePayload(payload);
+            // static zmq::send_flags flags{};
+            // zmq::message_t thePayload(payload);
             {
-                std::lock_guard<std::mutex> writeLock(socketMutex);
-                socketPtr->send(thePayload, flags);
+                // std::lock_guard<std::mutex> writeLock(socketMutex);
+                // socketPtr->send(thePayload, flags);
             }
         }
         bool active = false;
